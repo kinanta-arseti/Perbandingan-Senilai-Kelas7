@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan Soal Perbandingan Senilai</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #0e5dac;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .note {
+            text-align: center;
+            font-size: 1rem;
+            color: #e51313;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .soal {
+            background: #e7f3fe;
+            border-left: 5px solid #2196F3;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .soal p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .soal input {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .soal button {
+            padding: 10px 15px;
+            background-color: #0e5dac;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .soal button:hover {
+            background-color: #0d4e9c;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .benar {
+            color: green;
+        }
+
+        .salah {
+            color: red;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Latihan Soal Perbandingan Senilai</h1>
+    <p class="note"> Sebelum menjawab soal teman-teman perlu perhatikan, untuk jawabannya hanya ditulis berupa angka saja, tidak menggunakan titik atau koma. SELAMAT MENJAWAB & GOOD LUCK!!</p>
+
+    <div class="soal" id="soal1">
+        <p>1. Jika 4 kg gula harganya Rp40.000, berapa harga 10 kg gula?</p>
+        <input type="number" placeholder="Masukkan jawaban Anda" id="jawaban1">
+        <button onclick="cekJawaban(1, 100000)">Cek Jawaban</button>
+        <div class="feedback" id="feedback1"></div>
+    </div>
+
+    <div class="soal" id="soal2">
+        <p>2. Satu mobil menempuh 180 km dalam 3 jam. Berapa lama waktu yang diperlukan untuk menempuh 300 km?</p>
+        <input type="number" placeholder="Masukkan jawaban Anda" id="jawaban2">
+        <button onclick="cekJawaban(2, 5)">Cek Jawaban</button>
+        <div class="feedback" id="feedback2"></div>
+    </div>
+
+    <div class="soal" id="soal3">
+        <p>3. Jika 5 baju seharga Rp250.000, berapa harga 12 baju?</p>
+        <input type="number" placeholder="Masukkan jawaban Anda" id="jawaban3">
+        <button onclick="cekJawaban(3, 600000)">Cek Jawaban</button>
+        <div class="feedback" id="feedback3"></div>
+    </div>
+
+    <div class="soal" id="soal4">
+        <p>4. Sebuah resep membutuhkan 300 gram tepung untuk 4 kue. Berapa gram tepung yang diperlukan untuk 10 kue?</p>
+        <input type="number" placeholder="Masukkan jawaban Anda" id="jawaban4">
+        <button onclick="cekJawaban(4, 750)">Cek Jawaban</button>
+        <div class="feedback" id="feedback4"></div>
+    </div>
+
+    <div class="soal" id="soal5">
+        <p>5. Jika 6 botol minuman harganya Rp120.000, berapa harga 15 botol?</p>
+        <input type="number" placeholder="Masukkan jawaban Anda" id="jawaban5">
+        <button onclick="cekJawaban(5, 300000)">Cek Jawaban</button>
+        <div class="feedback" id="feedback5"></div>
+    </div>
+
+</div>
+
+<footer>
+    &copy; 2024 Latihan Soal Interaktif. Kinanta Arseti Marga Pendika.
+</footer>
+
+<script>
+    function cekJawaban(soal, jawabanBenar) {
+        const jawabanUser = document.getElementById(`jawaban${soal}`).value;
+        const feedback = document.getElementById(`feedback${soal}`);
+
+        feedback.textContent = "";
+        feedback.className = "feedback";
+
+        if (parseInt(jawabanUser) === jawabanBenar) {
+            feedback.textContent = "Jawaban Anda Benar!";
+            feedback.className += " benar";
+        } else {
+            feedback.textContent = "Jawaban Anda Salah. Coba Lagi!";
+            feedback.className += " salah";
+        }
+    }
+</script>
+
+</body>
+</html>
